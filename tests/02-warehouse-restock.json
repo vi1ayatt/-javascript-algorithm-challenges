@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Sınaq 1: Case 1",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "Pen",
+          "stock": 2,
+          "price": 3
+        },
+        {
+          "id": 2,
+          "name": "Book",
+          "stock": 7,
+          "price": 5
+        }
+      ],
+      5
+    ],
+    "expected": {
+      "restock": [
+        {
+          "id": 1,
+          "name": "Pen",
+          "quantity": 3,
+          "cost": 9
+        }
+      ],
+      "totalCost": 9,
+      "updatedProducts": [
+        {
+          "id": 1,
+          "name": "Pen",
+          "stock": 5,
+          "price": 3
+        },
+        {
+          "id": 2,
+          "name": "Book",
+          "stock": 7,
+          "price": 5
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 2: Case 2",
+    "input": [
+      [],
+      4
+    ],
+    "expected": {
+      "restock": [],
+      "totalCost": 0,
+      "updatedProducts": []
+    }
+  },
+  {
+    "name": "Sınaq 3: Case 3",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "A",
+          "stock": 0,
+          "price": 2.5
+        },
+        {
+          "id": 2,
+          "name": "B",
+          "stock": 1,
+          "price": 8
+        }
+      ],
+      2
+    ],
+    "expected": {
+      "restock": [
+        {
+          "id": 1,
+          "name": "A",
+          "quantity": 2,
+          "cost": 5.0
+        },
+        {
+          "id": 2,
+          "name": "B",
+          "quantity": 1,
+          "cost": 8
+        }
+      ],
+      "totalCost": 13.0,
+      "updatedProducts": [
+        {
+          "id": 1,
+          "name": "A",
+          "stock": 2,
+          "price": 2.5
+        },
+        {
+          "id": 2,
+          "name": "B",
+          "stock": 2,
+          "price": 8
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 4: Case 4",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "X",
+          "stock": 3,
+          "price": 10
+        }
+      ],
+      -1
+    ],
+    "expected": "Invalid minimum!"
+  },
+  {
+    "name": "Sınaq 5: Case 5",
+    "input": [
+      [
+        {
+          "id": 3,
+          "name": "Cable",
+          "stock": 6,
+          "price": 12
+        }
+      ],
+      6
+    ],
+    "expected": {
+      "restock": [],
+      "totalCost": 0,
+      "updatedProducts": [
+        {
+          "id": 3,
+          "name": "Cable",
+          "stock": 6,
+          "price": 12
+        }
+      ]
+    }
+  }
+]

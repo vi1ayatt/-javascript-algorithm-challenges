@@ -1,0 +1,185 @@
+[
+  {
+    "name": "Sınaq 1: Case 1",
+    "input": [
+      [
+        {
+          "address": "A",
+          "distanceKm": 10,
+          "orders": [
+            {
+              "amount": 50
+            },
+            {
+              "amount": 20
+            }
+          ]
+        },
+        {
+          "address": "B",
+          "distanceKm": 5,
+          "orders": [
+            {
+              "amount": 30
+            }
+          ]
+        }
+      ],
+      2,
+      60
+    ],
+    "expected": {
+      "stops": [
+        {
+          "address": "A",
+          "stopTotal": 70,
+          "priority": true
+        },
+        {
+          "address": "B",
+          "stopTotal": 30,
+          "priority": false
+        }
+      ],
+      "totalDistance": 15,
+      "totalRevenue": 100,
+      "fuelCost": 30,
+      "profit": 70,
+      "priorityStops": [
+        "A"
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 2: Case 2",
+    "input": [
+      [],
+      3,
+      100
+    ],
+    "expected": {
+      "stops": [],
+      "totalDistance": 0,
+      "totalRevenue": 0,
+      "fuelCost": 0,
+      "profit": 0,
+      "priorityStops": []
+    }
+  },
+  {
+    "name": "Sınaq 3: Case 3",
+    "input": [
+      [
+        {
+          "address": "C",
+          "distanceKm": 0,
+          "orders": []
+        }
+      ],
+      2,
+      0
+    ],
+    "expected": {
+      "stops": [
+        {
+          "address": "C",
+          "stopTotal": 0,
+          "priority": true
+        }
+      ],
+      "totalDistance": 0,
+      "totalRevenue": 0,
+      "fuelCost": 0,
+      "profit": 0,
+      "priorityStops": [
+        "C"
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 4: Case 4",
+    "input": [
+      [
+        {
+          "address": "X",
+          "distanceKm": 2.5,
+          "orders": [
+            {
+              "amount": 12.5
+            },
+            {
+              "amount": 7.5
+            }
+          ]
+        },
+        {
+          "address": "Y",
+          "distanceKm": 1.5,
+          "orders": [
+            {
+              "amount": 0
+            }
+          ]
+        }
+      ],
+      1.5,
+      20
+    ],
+    "expected": {
+      "stops": [
+        {
+          "address": "X",
+          "stopTotal": 20.0,
+          "priority": true
+        },
+        {
+          "address": "Y",
+          "stopTotal": 0,
+          "priority": false
+        }
+      ],
+      "totalDistance": 4.0,
+      "totalRevenue": 20.0,
+      "fuelCost": 6.0,
+      "profit": 14.0,
+      "priorityStops": [
+        "X"
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 5: Case 5",
+    "input": [
+      [
+        {
+          "address": "Z",
+          "distanceKm": 8,
+          "orders": [
+            {
+              "amount": 10
+            },
+            {
+              "amount": 20
+            }
+          ]
+        }
+      ],
+      3,
+      31
+    ],
+    "expected": {
+      "stops": [
+        {
+          "address": "Z",
+          "stopTotal": 30,
+          "priority": false
+        }
+      ],
+      "totalDistance": 8,
+      "totalRevenue": 30,
+      "fuelCost": 24,
+      "profit": 6,
+      "priorityStops": []
+    }
+  }
+]

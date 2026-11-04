@@ -1,0 +1,256 @@
+[
+  {
+    "name": "Sınaq 1: Case 1",
+    "input": [
+      [
+        {
+          "id": 1,
+          "title": "Dune",
+          "availableCopies": 2
+        },
+        {
+          "id": 2,
+          "title": "1984",
+          "availableCopies": 1
+        }
+      ],
+      [
+        {
+          "user": "Ali",
+          "bookId": 1
+        },
+        {
+          "user": "Ali",
+          "bookId": 2
+        },
+        {
+          "user": "Leyla",
+          "bookId": 1
+        },
+        {
+          "user": "Murad",
+          "bookId": 1
+        },
+        {
+          "user": "Aysel",
+          "bookId": 99
+        }
+      ],
+      1
+    ],
+    "expected": {
+      "approved": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "title": "Dune"
+        },
+        {
+          "user": "Leyla",
+          "bookId": 1,
+          "title": "Dune"
+        }
+      ],
+      "rejected": [
+        {
+          "user": "Ali",
+          "bookId": 2,
+          "reason": "User limit reached"
+        },
+        {
+          "user": "Murad",
+          "bookId": 1,
+          "reason": "Out of stock"
+        },
+        {
+          "user": "Aysel",
+          "bookId": 99,
+          "reason": "Book not found"
+        }
+      ],
+      "remainingBooks": [
+        {
+          "id": 1,
+          "title": "Dune",
+          "availableCopies": 0
+        },
+        {
+          "id": 2,
+          "title": "1984",
+          "availableCopies": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 2: Case 2",
+    "input": [
+      [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 1
+        }
+      ],
+      [
+        {
+          "user": "Ali",
+          "bookId": 1
+        },
+        {
+          "user": "Ali",
+          "bookId": 1
+        }
+      ],
+      2
+    ],
+    "expected": {
+      "approved": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "title": "A"
+        }
+      ],
+      "rejected": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "reason": "Out of stock"
+        }
+      ],
+      "remainingBooks": [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 3: Case 3",
+    "input": [
+      [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 2
+        }
+      ],
+      [],
+      1
+    ],
+    "expected": {
+      "approved": [],
+      "rejected": [],
+      "remainingBooks": [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 2
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 4: Case 4",
+    "input": [
+      [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 1
+        }
+      ],
+      [
+        {
+          "user": "Ali",
+          "bookId": 1
+        },
+        {
+          "user": "Leyla",
+          "bookId": 1
+        }
+      ],
+      0
+    ],
+    "expected": {
+      "approved": [],
+      "rejected": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "reason": "User limit reached"
+        },
+        {
+          "user": "Leyla",
+          "bookId": 1,
+          "reason": "User limit reached"
+        }
+      ],
+      "remainingBooks": [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "Sınaq 5: Case 5",
+    "input": [
+      [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 3
+        }
+      ],
+      [
+        {
+          "user": "Ali",
+          "bookId": 1
+        },
+        {
+          "user": "Ali",
+          "bookId": 1
+        },
+        {
+          "user": "Ali",
+          "bookId": 1
+        }
+      ],
+      2
+    ],
+    "expected": {
+      "approved": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "title": "A"
+        },
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "title": "A"
+        }
+      ],
+      "rejected": [
+        {
+          "user": "Ali",
+          "bookId": 1,
+          "reason": "User limit reached"
+        }
+      ],
+      "remainingBooks": [
+        {
+          "id": 1,
+          "title": "A",
+          "availableCopies": 1
+        }
+      ]
+    }
+  }
+]

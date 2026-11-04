@@ -1,0 +1,201 @@
+[
+  {
+    "name": "Sınaq 1: Case 1",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "Ali"
+        },
+        {
+          "id": 2,
+          "name": "Leyla"
+        }
+      ],
+      [
+        {
+          "playerId": 1,
+          "points": 10
+        },
+        {
+          "playerId": 2,
+          "points": 15
+        }
+      ]
+    ],
+    "expected": {
+      "leaderboard": [
+        {
+          "rank": 1,
+          "id": 2,
+          "name": "Leyla",
+          "totalPoints": 15
+        },
+        {
+          "rank": 2,
+          "id": 1,
+          "name": "Ali",
+          "totalPoints": 10
+        }
+      ],
+      "winner": "Leyla",
+      "averagePoints": 12.5
+    }
+  },
+  {
+    "name": "Sınaq 2: Case 2",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "Zara"
+        },
+        {
+          "id": 2,
+          "name": "Aysel"
+        },
+        {
+          "id": 3,
+          "name": "Murad"
+        }
+      ],
+      [
+        {
+          "playerId": 1,
+          "points": 10
+        },
+        {
+          "playerId": 2,
+          "points": 10
+        }
+      ],
+      [
+        {
+          "playerId": 3,
+          "points": 20
+        },
+        {
+          "playerId": 999,
+          "points": 100
+        }
+      ]
+    ],
+    "expected": {
+      "leaderboard": [
+        {
+          "rank": 1,
+          "id": 3,
+          "name": "Murad",
+          "totalPoints": 20
+        },
+        {
+          "rank": 2,
+          "id": 2,
+          "name": "Aysel",
+          "totalPoints": 10
+        },
+        {
+          "rank": 3,
+          "id": 1,
+          "name": "Zara",
+          "totalPoints": 10
+        }
+      ],
+      "winner": "Murad",
+      "averagePoints": 13.333333333333334
+    }
+  },
+  {
+    "name": "Sınaq 3: Case 3",
+    "input": [
+      [],
+      []
+    ],
+    "expected": {
+      "leaderboard": [],
+      "winner": null,
+      "averagePoints": 0
+    }
+  },
+  {
+    "name": "Sınaq 4: Case 4",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "Ali"
+        },
+        {
+          "id": 2,
+          "name": "Murad"
+        }
+      ],
+      [],
+      [
+        {
+          "playerId": 1,
+          "points": 5
+        },
+        {
+          "playerId": 1,
+          "points": 7
+        },
+        {
+          "playerId": 2,
+          "points": 12
+        }
+      ]
+    ],
+    "expected": {
+      "leaderboard": [
+        {
+          "rank": 1,
+          "id": 1,
+          "name": "Ali",
+          "totalPoints": 12
+        },
+        {
+          "rank": 2,
+          "id": 2,
+          "name": "Murad",
+          "totalPoints": 12
+        }
+      ],
+      "winner": "Ali",
+      "averagePoints": 12.0
+    }
+  },
+  {
+    "name": "Sınaq 5: Case 5",
+    "input": [
+      [
+        {
+          "id": 1,
+          "name": "Nihat"
+        },
+        {
+          "id": 2,
+          "name": "Aysel"
+        }
+      ]
+    ],
+    "expected": {
+      "leaderboard": [
+        {
+          "rank": 1,
+          "id": 2,
+          "name": "Aysel",
+          "totalPoints": 0
+        },
+        {
+          "rank": 2,
+          "id": 1,
+          "name": "Nihat",
+          "totalPoints": 0
+        }
+      ],
+      "winner": "Aysel",
+      "averagePoints": 0.0
+    }
+  }
+]
